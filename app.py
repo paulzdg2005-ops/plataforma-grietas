@@ -15,7 +15,11 @@ import motor
 
 CARPETA = os.path.dirname(os.path.abspath(__file__))
 EXCEL = os.path.join(CARPETA, "datos", "EH4000_historial_grietas.xlsx")
+if not os.path.exists(EXCEL):
+    EXCEL = os.path.join(CARPETA, "EH4000_historial_grietas.xlsx")
 CARPETA_ESQUEMAS = os.path.join(CARPETA, "imagenes", "esquemas")
+if not os.path.exists(os.path.join(CARPETA_ESQUEMAS, "EH4_VD_viga_derecha.png")):
+    CARPETA_ESQUEMAS = CARPETA
 CARPETA_FOTOS = os.path.join(CARPETA, "imagenes", "fotos")
 os.makedirs(CARPETA_ESQUEMAS, exist_ok=True)
 os.makedirs(CARPETA_FOTOS, exist_ok=True)
